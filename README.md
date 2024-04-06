@@ -13,18 +13,23 @@ Při práci ve VS Code je nutné nainstalovat extension Live Sever
 ### [2) Rozdělení JS a HTML souborů](https://github.com/frantisekmuzik/YWEK_D3/commit/ea29841e67628ce8a55b75541bc4c68c738c787e)
 - vytvoření JS souboru, do kterého se přesune kód z HTML
 
-### 3) Přidání přímo zadaných dat
+### [3) Přidání přímo zadaných dat](https://github.com/frantisekmuzik/YWEK_D3/commit/f694b7d625e5622db3f8f09380e8fda81edf3cec)
 - vytvoření matice dat (datum, hodnota)
 - základní úprava os
 - vykreslování hodnot grafu
 - změna atributů grafu (barva apod.)
 
-### 4) Import dat z csv
-- stažení dat z ČSÚ (ideální data -> rok, hodnota): https://vdb.czso.cz/vdbvo2/faces/cs/index.jsf?page=statistiky
+![](/img/graf2.png)
+
+### [4) Import dat z csv](https://github.com/frantisekmuzik/YWEK_D3/commit/c04123e071413b69d25dce000aecf2435f40d9f6)
+- stažení dat v XSLX z ČSÚ (ideální data -> rok, hodnota): https://vdb.czso.cz/vdbvo2/faces/cs/index.jsf?page=statistiky
+- úprava v Excelu (ponechat pouze dva sloupce - datum, hodnota) a vyexportovat včetně záhlaví jako CSV s kódováním UTF-8
 - import dat v kódu
 - změna datového formátu vložených atributů
 
-### 5) Vylepšení graafu
+![](/img/graf3.png)
+
+### 5) Vylepšení grafu
 - přidání titulku a zdroje dat
 - případná úprava os a jejich popisu
 
@@ -32,3 +37,6 @@ Při práci ve VS Code je nutné nainstalovat extension Live Sever
 - vytvoření interaktivity grafu
 - přidání pop-upu s výpisem vybraných hodnot
 - skrytí pop-upu, pokud nejsou zjišťované hodnoty
+
+# Užitečné odkazy
+- styly v D3: http://www.d3noob.org/2014/02/styles-in-d3js.html
