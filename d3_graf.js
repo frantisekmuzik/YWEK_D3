@@ -60,6 +60,47 @@ svg.append("path")
     .style("stroke-dasharray", ("10,3")) // Čárkovaná linie, vzor čárkování určen číselně (čára, mezera)
     .attr("d", linie);
 
+// Vykreslení indikátoru zobrazujícího vybranu hodnotu grafu    
+const circle = svg.append("circle")
+    .attr("fill", "steelblue") // Výplň
+    .style("stroke", "white") // Ohraničení
+    .attr("opacity", .70); // Průhlednost
+      
+// Vytvoření listening rectangle, který bude číst data z celého grafu; propojení se stylem v html    
+const listeningRect = svg.append("rect")
+    .attr("width", width)
+    .attr("height", height);
+
+// Zvolení správných hodnot z grafu na základě pozice myši    
+listeningRect.on("mousemove", function (event) {
+    const [xCoord] = d3.pointer(event, this);
+    const bisectDatum = d3.bisector(d => d.datum).left; // Nalezení nejbližšího bodu z grafu k pozici myši
+    const x0 = x.invert(xCoord);
+    const i = bisectDatum(data, x0, 1);
+    const d0 = data[i - 1];
+    const d1 = data[i];
+    const d = x0 - d0.datum > d1.datum- x0 ? d1 : d0;
+    const xPos = x(d.datum); // Do xPos se přiřadí vybraný datum (z načtených dat) na ose x
+    const yPos = y(d.hodnota); // Do yPos se přiřadí vybraná hodnota (z načtených dat) na ose y
+
+    // Aktualizování pozice kružnice na základě pozice myši
+    circle.attr("cx", xPos)
+        .attr("cy", yPos);
+
+    // Nastavení poloměru kružnice
+    circle.transition()
+        .duration(50) // Rychlost změny poloměru kružnice na zobrazovaný poloměr
+        .attr("r", 5); // Zobrazovaný poloměr
+});
+
+// Skrytí kružnice při opuštění grafu myší
+listeningRect.on("mouseleave", function () {
+    circle.transition()
+      .duration(50)
+      .attr("r", 0);
+    
+});
+
 // Přidání titulku grafu
 svg.append("text")
   .attr("class", "title")

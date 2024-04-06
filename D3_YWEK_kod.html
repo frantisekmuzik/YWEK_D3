@@ -1,9 +1,30 @@
 <!DOCTYPE html>
-<!--Nastavení kódování UTF-8-->
-<meta charset="utf-8" />
 
-<!--Vytvoření divu, do kterého se bude graf vykreslovat-->
-<div id="container"></div>
+<head>
+    <!--Nastavení kódování UTF-8-->
+    <meta charset="utf-8" />
+
+    <title>Vývoj HDP v ČR</title>
+
+    <!--Nastavení stylu-->
+    <style>
+        rect {
+        pointer-events: all;
+        fill-opacity: 0;
+        stroke-opacity: 0;
+        z-index: 1;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <!--Vytvoření divu, do kterého se bude graf vykreslovat-->
+    <div id="container"></div>
+
+</body>
+
 
 <!--Přidání JS knihovny z lokálního souboru - je nutné mít soubor ve stejném adresáři s html kódem-->
 <!--Po přidání knihovny lokálně se zpřístupní našeptávání funkcí knihovny D3-->
