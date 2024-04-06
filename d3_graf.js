@@ -71,6 +71,11 @@ const listeningRect = svg.append("rect")
     .attr("width", width)
     .attr("height", height);
 
+// Vytvoření div pro zobrazení popupu    
+const popup = d3.select("body")
+    .append("div")
+    .attr("class", "popup");
+
 // Zvolení správných hodnot z grafu na základě pozice myši    
 listeningRect.on("mousemove", function (event) {
     const [xCoord] = d3.pointer(event, this);
@@ -91,13 +96,24 @@ listeningRect.on("mousemove", function (event) {
     circle.transition()
         .duration(50) // Rychlost změny poloměru kružnice na zobrazovaný poloměr
         .attr("r", 5); // Zobrazovaný poloměr
+
+    // Vykreslení pop-upu 
+    popup
+    .style("display", "block")
+    .style("left", `${xPos + 20}px`) // Offset popupu oproti pozici myši
+    .style("top", `${yPos + 20}px`)
+    .html(`<strong>Datum: </strong> ${d.datum.getFullYear()}<br><strong>HDP: </strong> ${d.hodnota.toLocaleString()} Kč`)
 });
 
-// Skrytí kružnice při opuštění grafu myší
+// Skrytí elementů při opuštění grafu myší
 listeningRect.on("mouseleave", function () {
+    // Skrytí kružnice
     circle.transition()
       .duration(50)
       .attr("r", 0);
+
+    // Skrytí pop-upu  
+    popup.style("display", "none");  
     
 });
 
