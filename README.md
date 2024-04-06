@@ -44,12 +44,16 @@ Při práci ve VS Code je nutné nainstalovat extension Live Sever
 
 ![](/img/graf5.png)
 
-### 7) Pop-up
+### [7) Pop-up](https://github.com/frantisekmuzik/YWEK_D3/commit/62ea2606ca60acac93c3183f0e1f405d54fa1b89)
 - vytvoření stylu v html pro pop-up
+- vytvoření divu pro pop-up
 - přidání pop-upu s výpisem vybraných hodnot 
 - skrytí pop-upu, pokud nejsou zjišťované hodnoty
+
+![](/img/graf6.png)
 
 # Užitečné odkazy
 - styly v D3: http://www.d3noob.org/2014/02/styles-in-d3js.html
 - tvary v D3: https://d3-graph-gallery.com/graph/shape.html
 - atributy v D3: http://www.d3noob.org/2014/02/attributes-in-d3js.html
+- převod času: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
