@@ -8,7 +8,7 @@ Při práci ve VS Code je nutné nainstalovat extension Live Sever
 - instalace knihovny: https://d3js.org/getting-started#d3-in-vanilla-html
 - ukázkový graf (zobrazí pouze osy): https://d3js.org/getting-started
 
-![](../img/graf1.png)
+![](/img/graf1.png)
 
 ### [2) Rozdělení JS a HTML souborů](https://github.com/frantisekmuzik/YWEK_D3/commit/ea29841e67628ce8a55b75541bc4c68c738c787e)
 - vytvoření JS souboru, do kterého se přesune kód z HTML
