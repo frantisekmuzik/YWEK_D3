@@ -8,7 +8,7 @@ const height = 400;
 const marginTop = 20;
 const marginRight = 20;
 const marginBottom = 30;
-const marginLeft = 40;
+const marginLeft = 60;
 
 // Načtení dat z csv
 const data = d3.csv("cr_data_hdp.csv").then( function(data) {
@@ -59,6 +59,26 @@ svg.append("path")
     .attr("stroke-width", 3) // Tloušťka linie
     .style("stroke-dasharray", ("10,3")) // Čárkovaná linie, vzor čárkování určen číselně (čára, mezera)
     .attr("d", linie);
+
+// Přidání titulku grafu
+svg.append("text")
+  .attr("class", "title")
+  .attr("x", width / 2) // x-ová pozice 
+  .attr("y", marginTop + 10) // y-ová pozice
+  .style("font-size", "24px") // Velikost fontu
+  .style("font-weight", "bold") // Typ fontu
+  .style("font-family", "sans-serif") // Typ fontu
+  .attr("text-anchor", "middle") // Vztažný bod
+  .text("Vývoj HDP v České republice (v Kč)"); // Text nadpisu
+
+// Přidání zdroje dat
+svg.append("text")
+  .attr("class", "source-credit")
+  .attr("x", width/2)
+  .attr("y", height)
+  .style("font-size", "9px")
+  .style("font-family", "sans-serif")
+  .text("Zdroj: ČSÚ");  
 
 // Vložení SVG do připraveného containeru v divu (okazujeme se před id definované v divu)
 container.append(svg.node());
