@@ -1,12 +1,16 @@
 # Ukázka práce s knihovnou D3.js
 
+Při práci ve VS Code je nutné nainstalovat extension Live Sever
+
 ## Jednotlivé kroky jsou rozděleny do samostatných commitů pro případné hledání chyb:
-### 1) Instalace knihovny a příprava template grafu
+### [1) Instalace knihovny a příprava template grafu](https://github.com/frantisekmuzik/YWEK_D3/commit/206a0fbe5cc46cc20e45bfdfb604a4f7081bbd95)
 - knihovna: https://d3js.org/
 - instalace knihovny: https://d3js.org/getting-started#d3-in-vanilla-html
 - ukázkový graf (zobrazí pouze osy): https://d3js.org/getting-started
 
-### 2) Rozdělení JS a HTML souborů
+![](../img/graf1.png)
+
+### [2) Rozdělení JS a HTML souborů](https://github.com/frantisekmuzik/YWEK_D3/commit/ea29841e67628ce8a55b75541bc4c68c738c787e)
 - vytvoření JS souboru, do kterého se přesune kód z HTML
 
 ### 3) Přidání přímo zadaných dat
