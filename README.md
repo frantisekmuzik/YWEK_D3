@@ -29,9 +29,11 @@ Při práci ve VS Code je nutné nainstalovat extension Live Sever
 
 ![](/img/graf3.png)
 
-### 5) Vylepšení grafu
+### [5) Vylepšení grafu](https://github.com/frantisekmuzik/YWEK_D3/commit/adbd009054ab82ebfc8026288efbc85471730544)
 - přidání titulku a zdroje dat
 - případná úprava os a jejich popisu
+
+![](/img/graf4.png)
 
 ### 6) Interaktivita
 - vytvoření interaktivity grafu
