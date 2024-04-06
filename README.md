@@ -35,10 +35,21 @@ Při práci ve VS Code je nutné nainstalovat extension Live Sever
 
 ![](/img/graf4.png)
 
-### 6) Interaktivita
+### [6) Interaktivita](https://github.com/frantisekmuzik/YWEK_D3/commit/c622dda4a6df87b6bffd8ee205cc8481d927d2ef)
 - vytvoření interaktivity grafu
-- přidání pop-upu s výpisem vybraných hodnot
+- základní úprava html - vytvoření nadpisu karty, head, body
+- vytvoření stylu v html pro listening rectangle
+- vytvoření indikátoru zobrazené hodnoty na linii grafu
+- skrytí indikátoru zobrazené hodnoty po opuštění grafu ukazatelem myši
+
+![](/img/graf5.png)
+
+### 7) Pop-up
+- vytvoření stylu v html pro pop-up
+- přidání pop-upu s výpisem vybraných hodnot 
 - skrytí pop-upu, pokud nejsou zjišťované hodnoty
 
 # Užitečné odkazy
 - styly v D3: http://www.d3noob.org/2014/02/styles-in-d3js.html
+- tvary v D3: https://d3-graph-gallery.com/graph/shape.html
+- atributy v D3: http://www.d3noob.org/2014/02/attributes-in-d3js.html
