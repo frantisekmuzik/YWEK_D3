@@ -10,15 +10,13 @@ const marginRight = 20;
 const marginBottom = 30;
 const marginLeft = 40;
 
-// Přidání vymyšlených testovacích dat ve formátu datum, hodnoty
-const data = [
-    {datum: new Date("2020-01-01"), hodnota: 520},
-    {datum: new Date("2022-07-01"), hodnota: 50},
-    {datum: new Date("2023-01-01"), hodnota: 10},
-    {datum: new Date("2021-01-01"), hodnota: 63},
-    {datum: new Date("2020-08-12"), hodnota: 28},
-    {datum: new Date("2028-01-01"), hodnota: 19}
-];
+// Načtení dat z csv
+const data = d3.csv("cr_data_hdp.csv").then( function(data) {
+    const parseRok = d3.timeParse("%Y");
+    data.forEach(d => { 
+        d.datum = parseRok(d.datum); // Převedení datumu z textu do formátu pro datum
+        d.hodnota = +d.hodnota; // Převedení hodnoty z textu do čísla
+    });
 
 // Výpis dat do konzole
 console.log(data)
@@ -55,7 +53,7 @@ const linie = d3.line()
 
 // Vykreslení linie do SVG    
 svg.append("path") 
-    .datum(data) // Načtení dat k vykreslení
+    .datum(data) // Načtení dat k vykreslení; vykreslení dle zadaného pořadí
     .attr("fill","none") // Barva výplně vykresleného obrazce
     .attr("stroke","steelblue") // Barva vykreslené linie
     .attr("stroke-width", 3) // Tloušťka linie
@@ -64,3 +62,5 @@ svg.append("path")
 
 // Vložení SVG do připraveného containeru v divu (okazujeme se před id definované v divu)
 container.append(svg.node());
+
+}) // Ukončení načítání dat
