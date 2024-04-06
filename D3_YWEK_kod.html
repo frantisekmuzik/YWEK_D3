@@ -1,43 +1,53 @@
 <!DOCTYPE html>
+<!--Nastavení kódování UTF-8-->
+<meta charset="utf-8" />
+
+<!--Vytvoření divu, do kterého se bude graf vykreslovat-->
 <div id="container"></div>
+
+<!--Přidání JS knihovny z lokálního souboru - je nutné mít soubor ve stejném adresáři s html kódem-->
+<!--Po přidání knihovny lokálně se zpřístupní našeptávání funkcí knihovny D3-->
+<script src="d3.v7.js"></script> 
+
+<!--Vložení JS kódu s grafem-->
 <script type="module">
 
-import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
-
-// Declare the chart dimensions and margins.
+// Určení velikosti grafu (hodnoty v px)
 const width = 640;
 const height = 400;
+
+// Určení okrajů grafu -> vypadá lépe vizuálně (hodnoty v px)
 const marginTop = 20;
 const marginRight = 20;
 const marginBottom = 30;
 const marginLeft = 40;
 
-// Declare the x (horizontal position) scale.
+// Vytvoření osy X
 const x = d3.scaleUtc()
-    .domain([new Date("2023-01-01"), new Date("2024-01-01")])
-    .range([marginLeft, width - marginRight]);
+    .domain([new Date("2023-01-01"), new Date("2024-01-01")]) // Datový rozsah osy 
+    .range([marginLeft, width - marginRight]); // Pixelový rozsah osy  
 
-// Declare the y (vertical position) scale.
+// Vytvoření osy Y
 const y = d3.scaleLinear()
     .domain([0, 100])
     .range([height - marginBottom, marginTop]);
 
-// Create the SVG container.
+// Vytvoření SVG, do kterého se graf vykreslí
 const svg = d3.create("svg")
-    .attr("width", width)
-    .attr("height", height);
+    .attr("width", width) // Určení šířky SVG
+    .attr("height", height); // Určení výšky SVG
 
-// Add the x-axis.
+// Vložení osy X do SVG
 svg.append("g")
-    .attr("transform", `translate(0,${height - marginBottom})`)
-    .call(d3.axisBottom(x));
+    .attr("transform", `translate(0,${height - marginBottom})`) // Určení pozice osy X vůči SVG
+    .call(d3.axisBottom(x)); 
 
-// Add the y-axis.
+// Vložení osy Y do SVG
 svg.append("g")
     .attr("transform", `translate(${marginLeft},0)`)
     .call(d3.axisLeft(y));
 
-// Append the SVG element.
+// Vložení SVG do připraveného containeru v divu (okazujeme se před id definované v divu)
 container.append(svg.node());
 
 </script>
